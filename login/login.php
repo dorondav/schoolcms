@@ -1,10 +1,10 @@
 <?php
 include "../config/connection.php";
+include_once "./includes/function.php";
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
-}
+// call functions:
+login()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <center>
                 <div class="middle">
                     <div id="login">
-                        <form action="" name="login-form" method="post">
+                        <form action="" name="login-form" method="POST">
                             <fieldset class="clearfix">
                                 <p>
                                     <span class="fa fa-user"></span>
-                                    <input type="text" name="name" id="email-login" Placeholder="Username">
+                                    <input type="text" name="login-email" id="email-login" Placeholder="Email Address">
                                 </p>
                                 <p>
                                     <span class="fa fa-lock"></span>

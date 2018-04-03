@@ -1,7 +1,3 @@
-<?php
-include "../config/connection.php";
-session_start();
-
-
-
-if
+<!-- <?php
+//include "../config/connection.php";
+//session_start();

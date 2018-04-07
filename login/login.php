@@ -55,7 +55,7 @@ login()
                             </fieldset>
                             <div class="clearfix" id="error"></div>
                         </form>
-                        <div class="clearfix"></div>
+                        <div class="clearfix test"></div>
 
                     </div>
                 </div>

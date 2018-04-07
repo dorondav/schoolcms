@@ -21,6 +21,7 @@ function login()
         } else {
             echo "Your Login Name or Password is invalid";
         }
+        ;
 
     }
 }

@@ -2,6 +2,7 @@
 
 class Users extends Controller
 {
+
     protected function register()
     {
         $viewmodel = new UserModel();
@@ -20,4 +21,15 @@ class Users extends Controller
         // Redirect
         header('Location: ' . ROOT_URL . 'users/login');
     }
+    protected function administrator()
+    {
+        $viewmodel = new UserModel();
+        $this->returnView($viewmodel->administrator(), true);
+    }
+    protected function getAdmin()
+    {
+        $viewmodel = new UserModel();
+        $this->returnView($viewmodel->getAdmin(), true);
+    }
+
 }

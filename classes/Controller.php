@@ -25,4 +25,5 @@ abstract class Controller
             require $view;
         }
     }
+
 }

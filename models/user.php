@@ -3,6 +3,14 @@ ob_start();
 
 class UserModel extends Model
 {
+    public function administrator()
+    {
+
+        $this->query('SELECT * FROM admins');
+        $rows = $this->resultSet();
+        return $rows;
+
+    }
 
     public function register()
     {
@@ -68,7 +76,9 @@ class UserModel extends Model
                 header('Location: ' . ROOT_URL . 'users/login');
             }
         }
-
+        $this->query('SELECT * FROM admins');
+        $rows = $this->resultSet();
+        return $rows;
         return;
     }
     public function login()
@@ -105,6 +115,13 @@ class UserModel extends Model
         }
         return;
 
+    }
+
+    public function getAdmin()
+    {
+        $admin_id = $_GET['userEmail'];
+        $row = $this->query('SELECT * FROM admins WHERE userEmail = {$admin_id}');
+        return $row;
     }
 
 }

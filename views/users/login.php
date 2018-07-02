@@ -15,5 +15,6 @@
     </div>
 
     <br>
-    <button type="submit" name="submit" class="btn btn-primary" value="submit">Submit</button>
+    <button type="submit" name="submit" class="btn btn-primary" value="submit">Login <i class="fa fa-sign-in" aria-hidden="true"></i>
+</button>
 </form>

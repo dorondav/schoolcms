@@ -1391,8 +1391,8 @@ html {
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
+    /* line-height: 1.42857143; */
+    /* color: #333; */
     background-color: #fff;
 }
 
@@ -3230,7 +3230,7 @@ input[type="search"] {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .radio,

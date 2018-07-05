@@ -32,4 +32,9 @@ class Users extends Controller
         $this->returnView($viewmodel->getAdmin(), true);
     }
 
+    protected function editAdmin()
+    {
+        $viewmodel = new UserModel();
+        $this->returnView($viewmodel->editAdmin(), true);
+    }
 }

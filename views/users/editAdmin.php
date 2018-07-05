@@ -1,19 +1,24 @@
-<?php if (!isset($_SESSION['is_logged_in'])):
-    header('Location: ' . ROOT_URL . 'users/login');
-endif;?>
+<?php ob_start();?>
 
+<?php if (!isset($_SESSION['is_logged_in'])): ?>
+    header('Location: ' . ROOT_URL . 'users/login');
+<?php endif;
+?>
+ <?php
+$id = $_GET['id'];
+echo print_r($id);
+?>
 <div class="mainNavBar">
     <ul>
         <li class="adminLeftSideNav">
             <p> Administrators </p>
-
         </li>
 
         <?php foreach ($viewmodel as $item): ?>
         <li class="adminSideBody">
             <img src="<?php echo ROOT_PATH . 'assets/image/' . $item['userImage']; ?>" class="adminManuImg">
             <div class="adminManuName" >
-            <a  href="editAdmin/?id=<?php echo $item['userID']; ?>">
+            <a  href="../editAdmin/?id=<?php echo $item['userID']; ?>">
                 <?php echo $item["userName"]; ?>
             </div>
             <div class="adminManuRole">
@@ -32,12 +37,17 @@ endif;?>
 </div>
 
 <div class="mainScreen">
+
+
+
 <form class="userCenterForm" method="POST" action="<?php $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
-    <h3>Register New Administrator</h3>
+    <h3>Edit Administrator</h3>
     <hr>
     <div class="form-group">
+
+
         <label for="userName">User Name</label>
-        <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter Name">
+        <input type="text" class="form-control" id="userName" name="userName" placeholder="<?php echo $userName ?>">
     </div>
 
 

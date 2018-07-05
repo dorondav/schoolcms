@@ -17,7 +17,8 @@ endif;?>
         <li class="adminSideBody">
             <img src="<?php echo ROOT_PATH . 'assets/image/' . $item['userImage']; ?>" class="adminManuImg">
             <div class="adminManuName" >
-                <a  href="editUser.php?$admin_id">
+            <a  href="editAdmin/?id=<?php echo $item['userID']; ?>">
+
                 <?php echo $item["userName"]; ?>
             </div>
             <div class="adminManuRole">

@@ -14,6 +14,7 @@ class UserModel extends Model
 
     public function register()
     {
+
         $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         $password = md5($post['password']);
 
@@ -79,8 +80,10 @@ class UserModel extends Model
         $this->query('SELECT * FROM admins');
         $rows = $this->resultSet();
         return $rows;
+
         return;
     }
+
     public function login()
     {
 
@@ -95,11 +98,11 @@ class UserModel extends Model
 
             $row = $this->single();
             $userImage = $row['userImage'];
+
             if ($row) {
 
                 $_SESSION['is_logged_in'] = true;
                 $_SESSION['user_data'] = array(
-                    "id" => $row['userID'],
                     "name" => $row['userName'],
                     "role" => $row['userRole'],
                     "image" => $row['userImage'],
@@ -117,11 +120,22 @@ class UserModel extends Model
 
     }
 
-    public function getAdmin()
+    // public function getAdmin()
+    // {
+    //     $admin_id = $_GET['userEmail'];
+    //     $row = $this->query('SELECT * FROM admins WHERE userEmail = {$admin_id}');
+    //     return $row;
+    // }
+
+    public function editAdmin()
     {
-        $admin_id = $_GET['userEmail'];
-        $row = $this->query('SELECT * FROM admins WHERE userEmail = {$admin_id}');
+        $this->query('SELECT * FROM admins');
+        $rows = $this->resultSet();
+        return $rows;
+
+        $user_id = $_GET['?id'];
+        $row = $this->query('SELECT * FROM admins WHERE userID = $user_id');
+
         return $row;
     }
-
 }
